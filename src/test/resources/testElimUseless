@@ -1,0 +1,5 @@
+S
+S = A S | B S | 's'
+E = E F | F F
+A = 'a'
+F = 'f'
