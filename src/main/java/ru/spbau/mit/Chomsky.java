@@ -5,6 +5,10 @@ import java.util.*;
 
 class Rule {
     private ArrayList<ArrayList<String>> listRules = new ArrayList<ArrayList<String>>();
+
+    public ArrayList<ArrayList<String>> get() {
+        return listRules;
+    }
     public void addRule(String name) {
         if (name.equals("|")) {
             listRules.add(new ArrayList<String>());
@@ -30,6 +34,13 @@ class Rule {
             if (i.contains(elem)){
                 return true;
             }
+        }
+        return false;
+    }
+    public boolean containsTerm(String name) {
+        for (ArrayList<String> i : listRules) {
+            if (i.size() == 1 && i.get(0).equals(name))
+                return true;
         }
         return false;
     }
@@ -281,7 +292,15 @@ public class Chomsky {
         }
 //        print();
     }
-
+    public int size() {
+        return grammarRules.size();
+    }
+    public Map<String, Rule> getTree() {
+        return grammarRules;
+    }
+    public String getStart() {
+        return startRule;
+    }
     public void eliminateRulesMore2() {
         Set<Map.Entry<String, Rule>> entries = grammarRules.entrySet();
         Map<String, Rule> newRules = new HashMap<String, Rule>();
