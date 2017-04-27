@@ -404,9 +404,9 @@ public class Chomsky {
             i.getValue().removeDuplicate();
         }
         entries = grammarRules.entrySet();
-        for (Map.Entry<String, Rule> i : entries) {
-            i.getValue().removeLoop(i.getKey());
-        }
+//        for (Map.Entry<String, Rule> i : entries) {
+//            i.getValue().removeLoop(i.getKey());
+//        }
 //        print();
     }
     public void eliminateUnitRule() {
